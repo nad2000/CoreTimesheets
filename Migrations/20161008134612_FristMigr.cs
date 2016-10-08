@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CoreTimesheets.Migrations
+namespace Timesheets.Migrations
 {
     public partial class FristMigr : Migration
     {

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace CoreTimesheets.Models
+namespace Timesheets.Models
 {
     public partial class TimesheetContext : DbContext
     {

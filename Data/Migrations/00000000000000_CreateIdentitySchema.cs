@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WebApplication.Data.Migrations
+namespace Timesheets.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

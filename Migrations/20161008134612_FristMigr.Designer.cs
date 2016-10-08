@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using CoreTimesheets.Models;
+using Timesheets.Models;
 
-namespace CoreTimesheets.Migrations
+namespace Timesheets.Migrations
 {
     [DbContext(typeof(TimesheetContext))]
     [Migration("20161008134612_FristMigr")]
@@ -16,7 +16,7 @@ namespace CoreTimesheets.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1");
 
-            modelBuilder.Entity("CoreTimesheets.Models.ApproverCompany", b =>
+            modelBuilder.Entity("Timesheets.Models.ApproverCompany", b =>
                 {
                     b.Property<long>("UserId")
                         .HasColumnName("user_id");
@@ -36,7 +36,7 @@ namespace CoreTimesheets.Migrations
                     b.ToTable("approver_company");
                 });
 
-            modelBuilder.Entity("CoreTimesheets.Models.Break", b =>
+            modelBuilder.Entity("Timesheets.Models.Break", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -73,7 +73,7 @@ namespace CoreTimesheets.Migrations
                     b.ToTable("break");
                 });
 
-            modelBuilder.Entity("CoreTimesheets.Models.Company", b =>
+            modelBuilder.Entity("Timesheets.Models.Company", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -94,7 +94,7 @@ namespace CoreTimesheets.Migrations
                     b.ToTable("company");
                 });
 
-            modelBuilder.Entity("CoreTimesheets.Models.Entry", b =>
+            modelBuilder.Entity("Timesheets.Models.Entry", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -153,7 +153,7 @@ namespace CoreTimesheets.Migrations
                     b.ToTable("entry");
                 });
 
-            modelBuilder.Entity("CoreTimesheets.Models.Role", b =>
+            modelBuilder.Entity("Timesheets.Models.Role", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -176,7 +176,7 @@ namespace CoreTimesheets.Migrations
                     b.ToTable("role");
                 });
 
-            modelBuilder.Entity("CoreTimesheets.Models.User", b =>
+            modelBuilder.Entity("Timesheets.Models.User", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -225,7 +225,7 @@ namespace CoreTimesheets.Migrations
                     b.ToTable("user");
                 });
 
-            modelBuilder.Entity("CoreTimesheets.Models.UserRole", b =>
+            modelBuilder.Entity("Timesheets.Models.UserRole", b =>
                 {
                     b.Property<long>("UserId")
                         .HasColumnName("user_id");
@@ -245,51 +245,51 @@ namespace CoreTimesheets.Migrations
                     b.ToTable("user_role");
                 });
 
-            modelBuilder.Entity("CoreTimesheets.Models.ApproverCompany", b =>
+            modelBuilder.Entity("Timesheets.Models.ApproverCompany", b =>
                 {
-                    b.HasOne("CoreTimesheets.Models.Company", "Company")
+                    b.HasOne("Timesheets.Models.Company", "Company")
                         .WithMany("ApproverCompany")
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("CoreTimesheets.Models.User", "User")
+                    b.HasOne("Timesheets.Models.User", "User")
                         .WithMany("ApproverCompany")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("CoreTimesheets.Models.Entry", b =>
+            modelBuilder.Entity("Timesheets.Models.Entry", b =>
                 {
-                    b.HasOne("CoreTimesheets.Models.User", "Approver")
+                    b.HasOne("Timesheets.Models.User", "Approver")
                         .WithMany("EntryApprover")
                         .HasForeignKey("ApproverId");
 
-                    b.HasOne("CoreTimesheets.Models.Break", "BreakFor")
+                    b.HasOne("Timesheets.Models.Break", "BreakFor")
                         .WithMany("Entry")
                         .HasForeignKey("BreakForId");
 
-                    b.HasOne("CoreTimesheets.Models.User", "User")
+                    b.HasOne("Timesheets.Models.User", "User")
                         .WithMany("EntryUser")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("CoreTimesheets.Models.User", b =>
+            modelBuilder.Entity("Timesheets.Models.User", b =>
                 {
-                    b.HasOne("CoreTimesheets.Models.Company", "Workplace")
+                    b.HasOne("Timesheets.Models.Company", "Workplace")
                         .WithMany("User")
                         .HasForeignKey("WorkplaceId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("CoreTimesheets.Models.UserRole", b =>
+            modelBuilder.Entity("Timesheets.Models.UserRole", b =>
                 {
-                    b.HasOne("CoreTimesheets.Models.Role", "Role")
+                    b.HasOne("Timesheets.Models.Role", "Role")
                         .WithMany("UserRole")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("CoreTimesheets.Models.User", "User")
+                    b.HasOne("Timesheets.Models.User", "User")
                         .WithMany("UserRole")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

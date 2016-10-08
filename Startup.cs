@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using WebApplication.Data;
-using WebApplication.Models;
-using WebApplication.Services;
+using Timesheets.Data;
+using Timesheets.Models;
+using Timesheets.Services;
 
-namespace WebApplication
+namespace Timesheets
 {
     public class Startup
     {

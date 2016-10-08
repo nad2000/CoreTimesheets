@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CoreTimesheets.Models
+namespace Timesheets.Models
 {
     [Table("company")]
     public partial class Company
