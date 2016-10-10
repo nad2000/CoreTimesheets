@@ -18,10 +18,11 @@ namespace Timesheets.Models
             this.Code = code;
             this.Name = name;
             this.Minutes = length;
-            if (alternativeCode == null) 
-                this.AlternativeCode = code;
+            if (alternativeCode != null) 
+                this.AlternativeCode = alternativeCode;
         }
-
+        
+        [Key]
         [Column("id")]
         public long Id { get; set; }
         [Required]

@@ -16,6 +16,7 @@ namespace Timesheets.Models
             UserRole = new HashSet<UserRole>();
         }
 
+        [Key]
         [Column("id")]
         public long Id { get; set; }
         [Required]

@@ -14,6 +14,7 @@ namespace Timesheets.Models
             User = new HashSet<User>();
         }
 
+        [Key]
         [Column("id")]
         public long Id { get; set; }
         [Required]

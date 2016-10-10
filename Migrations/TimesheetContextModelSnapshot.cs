@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Timesheets.Models;
 
-namespace Timesheets.Migrations
+namespace CoreTimesheets.Migrations
 {
     [DbContext(typeof(TimesheetContext))]
     partial class TimesheetContextModelSnapshot : ModelSnapshot
@@ -42,7 +42,6 @@ namespace Timesheets.Migrations
                         .HasColumnName("id");
 
                     b.Property<string>("AlternativeCode")
-                        .IsRequired()
                         .HasColumnName("alternative_code")
                         .HasColumnType("VARCHAR(255)");
 

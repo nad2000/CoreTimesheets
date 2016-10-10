@@ -7,7 +7,8 @@ namespace Timesheets.Models
 {
     [Table("entry")]
     public partial class Entry
-    {
+    {   
+        [Key]
         [Column("id")]
         public long Id { get; set; }
         [Required]
