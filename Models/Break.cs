@@ -13,6 +13,15 @@ namespace Timesheets.Models
             Entry = new HashSet<Entry>();
         }
 
+        public Break(string code, string name, long length, string alternativeCode=null): this()
+        {
+            this.Code = code;
+            this.Name = name;
+            this.Minutes = length;
+            if (alternativeCode == null) 
+                this.AlternativeCode = code;
+        }
+
         [Column("id")]
         public long Id { get; set; }
         [Required]
@@ -21,9 +30,9 @@ namespace Timesheets.Models
         [Required]
         [Column("name", TypeName = "VARCHAR(255)")]
         public string Name { get; set; }
+        [Required]
         [Column("minutes")]
         public long Minutes { get; set; }
-        [Required]
         [Column("alternative_code", TypeName = "VARCHAR(255)")]
         public string AlternativeCode { get; set; }
 

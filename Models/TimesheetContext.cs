@@ -79,12 +79,12 @@ namespace Timesheets.Models
             });
         }
 
-        public virtual DbSet<ApproverCompany> ApproverCompany { get; set; }
-        public virtual DbSet<Break> Break { get; set; }
-        public virtual DbSet<Company> Company { get; set; }
-        public virtual DbSet<Entry> Entry { get; set; }
-        public virtual DbSet<Role> Role { get; set; }
-        public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<UserRole> UserRole { get; set; }
+        public virtual DbSet<ApproverCompany> ApproverCompanies { get; set; }
+        public virtual DbSet<Break> Breaks { get; set; }
+        public virtual DbSet<Company> Companies { get; set; }
+        public virtual DbSet<Entry> Entries { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserRole> UserRoles { get; set; }
     }
 }
