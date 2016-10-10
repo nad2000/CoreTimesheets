@@ -1,3 +1,10 @@
+# Flask Timesheet App Porting to .NET Core/ASP.NET Core
+
+This is merely attemt to play arround with Core to see it in action and for informed opinion on it based on hend-on experence.
+
+------------------------
+
+
 # Welcome to ASP.NET Core
 
 We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.
