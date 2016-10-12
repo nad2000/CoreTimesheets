@@ -1,0 +1,66 @@
+@{
+    ViewData["Title"] = "Filling";
+}
+<h3>@ViewData["Message"]</h3>
+
+<div class="main_content" id="content">
+    <div class="datatable">
+        <div class="table-card">
+            <div class="card_content">
+                <form id="timesheet">
+                    <div class="weekinput">
+                        
+                            <div class="form-group input_heading">
+                                <label>Week Ending: </label>
+                                <input type="week" class="form-control" placeholder="mm/dd/yyyy">
+                            </div>
+                        
+                    </div>
+                    <div class="tiemtable table-responsive">
+                        <table class="table table-striped table-hover">
+                            <tr id="table_head">
+                                <th>Week day</th>
+                                <th>Date</th>
+                                <th>Started at</th>
+                                <th>Ended at</th>
+                                <th>Break</th>
+                                <th>Total time</th>
+                            </tr>
+@for (int i = 0; i < 7; i++)
+{
+                            <tr>
+                                <th class="day">Day @i</th>
+                                <td>dd/mm/yyyy</td>
+                                <td><input type="text" class="form-control" name="start"></td>
+                                <td><input type="text" class="form-control" name="end"></td>
+                                <td>
+                                    <select class="form-control">
+                                        <option selected disabled>Selct one</option>
+                                        <option>15 mins</option>
+                                        <option>1/2 hour</option>
+                                        <option>45 mins</option>
+                                        <option>1 hour</option>
+                                        <option>1 hour 15 mins</option>
+                                        <option>1 hour 30 mins</option>
+                                        <option>1 hour 45 mins</option>
+                                        <option>2 hours</option>
+                                        <option>2 hours 15 mins</option>
+                                        <option>2 hours 30 mins</option>
+                                        <option>2 hours 45 mins</option>
+                                        <option>3 hours</option>
+                                        <option>3 hours 15 mins</option>
+                                        <option>3 hours 30 mins</option>
+                                        <option>3 hours 45 mins</option>
+                                        <option>4 hours</option>
+                                    </select>                                
+                                </td>
+                                <td><span id="totalTime"></span></td>
+                            </tr>
+}
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

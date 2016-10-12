@@ -75,10 +75,14 @@ namespace Timesheets
 
             app.UseIdentity();
 
-            // Add external authentication middleware below. To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
+            // Add external authentication middleware below. 
+            // To configure them please see https://go.microsoft.com/fwlink/?LinkID=532715
 
             app.UseMvc(routes =>
             {
+                // routes.MapRoute(
+                //     name: "timesheet",
+                //     template: "{controller=Timesheet}/{action=Index}/{weekEndDate?}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
